@@ -27,3 +27,7 @@ jobs:
         with:
           push: true
           tags: juicystake/chatbot:latest
+          secrets: |
+            "ERISKEY=${{ secrets.ERISKEY }}"
+            "AZUREPAT=${{ secrets.AZUREPAT }}"
+            "ORGNAME=knoxsdata"
