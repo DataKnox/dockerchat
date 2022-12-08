@@ -9,13 +9,12 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - name: Envfile
-        uses: SpicyPizza/create-envfile@v1.3
-        with:
-          envkey_ERISKEY: ${{ secrets.ERISKEY }}
-          envkey_AZUREPAT: ${{ secrets.AZUREPAT }}
-          envkey_ORGNAME: "knoxsdata"
-          envkey_PROJECTNAME: "knoxgates"
+      - name: Echo secrets
+        run: |
+          echo 'ERISKEY=${{ secrets.ERISKEY }}' >> .env
+          echo 'AZUREPAT=${{ secrets.AZUREPAT }}' >> .env
+          echo 'ORGNAME=knoxsdata' >> .env
+          echo 'PROJECTNAME=knoxgates' >> .env
       - name: Docker Buildx
         uses: docker/setup-buildx-action@v2
       - name: Login to Docker Hub
