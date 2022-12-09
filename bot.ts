@@ -8,7 +8,7 @@ import * as ints from "azure-devops-node-api/interfaces/common/VSSInterfaces"
 //CONNECTION
 dotenv.config()
 const PREFIX = '!';
-console.log("eriskey: " + process.env.ERISKEY)
+
 const bot = new eris.Client(process.env.ERISKEY);
 
 async function createWI(data: string): Promise<wi.WorkItem> {
