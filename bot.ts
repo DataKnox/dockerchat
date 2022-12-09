@@ -6,7 +6,7 @@ import * as ints from "azure-devops-node-api/interfaces/common/VSSInterfaces"
 
 
 //CONNECTION
-
+dotenv.config()
 const PREFIX = '!';
 console.log(process.env.ERISKEY)
 const bot = new eris.Client(process.env.ERISKEY);
