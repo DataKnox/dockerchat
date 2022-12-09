@@ -30,4 +30,4 @@ jobs:
           secrets: |
             "ERISKEY=${{ secrets.ERISKEY }}"
             "AZUREPAT=${{ secrets.AZUREPAT }}"
-            "ORGNAME=knoxsdata"
+            ORGNAME=knoxsdata
