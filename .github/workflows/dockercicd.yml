@@ -25,7 +25,6 @@ jobs:
       - name: Build image and push to repo
         uses: docker/build-push-action@v3
         with:
-          context: .
           push: true
           tags: juicystake/chatbot:latest
           secrets: |
