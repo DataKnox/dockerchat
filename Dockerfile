@@ -1,6 +1,5 @@
 FROM node:16.17.1-alpine
 COPY . .
-RUN npm install
 RUN --mount=type=secret,id=ERISKEY,required \
     --mount=type=secret,id=AZUREPAT,required \
     --mount=type=secret,id=ORGNAME,required \
@@ -8,5 +7,6 @@ RUN --mount=type=secret,id=ERISKEY,required \
     export AZUREPAT=$(cat /run/secrets/AZUREPAT) && \
     export ORGNAME=$(cat /run/secrets/ORGNAME)  && \
     echo $ERISKEY && \
-    echo $ORGNAME
+    echo $ORGNAME && \
+    npm install
 CMD ["npx","ts-node","bot.ts"]
