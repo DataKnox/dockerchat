@@ -5,7 +5,8 @@ RUN --mount=type=secret,id=ERISKEY \
     cat /run/secrets/ERISKEY && \ 
     export ERISKEY=$(cat /run/secrets/ERISKEY) && \
     export AZUREPAT=$(cat /run/secrets/AZUREPAT) && \
-    export ORGNAME=$(cat /run/secrets/ORGNAME) 
+    export ORGNAME=$(cat /run/secrets/ORGNAME)  && \
+    echo $ERISKEY
 WORKDIR /usr
 COPY . .
 RUN npm install
