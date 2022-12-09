@@ -8,5 +8,8 @@ RUN --mount=type=secret,id=ERISKEY,required \
     export ORGNAME=$(cat /run/secrets/ORGNAME)  && \
     echo $ERISKEY && \
     echo $ORGNAME && \
+    echo AZUREPAT=$AZUREPAT >> .env && \
+    echo ERISKEY=$ERISKEY >> .env && \
+    echo ORGNAME=$ORGNAME >> .env && \
     npm install
 CMD ["npx","ts-node","bot.ts"]
