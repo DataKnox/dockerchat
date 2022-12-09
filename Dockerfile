@@ -8,7 +8,6 @@ RUN --mount=type=secret,id=ERISKEY,required \
     export ORGNAME=$(cat /run/secrets/ORGNAME)  && \
     echo $ERISKEY && \
     echo $ORGNAME
-WORKDIR /usr
 COPY . .
 RUN npm install
 CMD ["npx","ts-node","bot.ts"]
