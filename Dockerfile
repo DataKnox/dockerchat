@@ -6,8 +6,6 @@ RUN --mount=type=secret,id=ERISKEY,required \
     export ERISKEY=$(cat /run/secrets/ERISKEY) && \
     export AZUREPAT=$(cat /run/secrets/AZUREPAT) && \
     export ORGNAME=$(cat /run/secrets/ORGNAME)  && \
-    echo $ERISKEY && \
-    echo $ORGNAME && \
     echo AZUREPAT=$AZUREPAT >> .env && \
     echo ERISKEY=$ERISKEY >> .env && \
     echo ORGNAME=$ORGNAME >> .env && \

@@ -9,12 +9,6 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo secrets
-        run: |
-          echo 'ERISKEY=${{ secrets.ERISKEY }}' >> .env
-          echo 'AZUREPAT=${{ secrets.AZUREPAT }}' >> .env
-          echo 'ORGNAME=knoxsdata' >> .env
-          echo 'PROJECTNAME=knoxgates' >> .env
       - name: Docker Buildx
         uses: docker/setup-buildx-action@v2
       - name: Login to Docker Hub
